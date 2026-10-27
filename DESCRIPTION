@@ -1,7 +1,7 @@
 Package: OmopIndices
 Type: Package
 Title: Patient-Level Indices from the OMOP Common Data Model
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: c(
     person("Martí", "Català", , "marti.catalasabate@ndorms.ox.ac.uk", 
     role = c("aut", "cre"), comment = c(ORCID = "0000-0003-3308-9905")),
@@ -24,13 +24,13 @@ Suggests: CDMConnector, CodelistGenerator, CohortConstructor, DBI,
         rmarkdown, RPostgres, testthat, visOmopResults
 URL: https://OHDSI.github.io/OmopIndices/
 BugReports: https://github.com/OHDSI/OmopIndices/issues
-Imports: cli, clock, dplyr, omopgenerics (>= 1.4.0), PatientProfiles,
-        purrr, rlang
+Imports: cli, clock, dplyr, lifecycle, omopgenerics (>= 1.4.0),
+        PatientProfiles, purrr, rlang
 Depends: R (>= 4.1.0)
-Config/roxygen2/version: 8.0.0
+Config/roxygen2/version: 8.1.0
 Config/Needs/website: rmarkdown
 NeedsCompilation: no
-Packaged: 2026-09-09 17:30:20 UTC; martics
+Packaged: 2026-10-27 21:14:09 UTC; martics
 Author: Martí Català [aut, cre] (ORCID:
     <https://orcid.org/0000-0003-3308-9905>),
   Marta Alcalde-Herraiz [aut] (ORCID:
@@ -38,4 +38,4 @@ Author: Martí Català [aut, cre] (ORCID:
   Maria T Sanchez-Santos [aut] (ORCID:
     <https://orcid.org/0000-0003-1908-8623>)
 Repository: CRAN
-Date/Publication: 2026-09-17 13:20:27 UTC
+Date/Publication: 2026-10-27 21:40:14 UTC

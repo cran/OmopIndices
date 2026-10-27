@@ -10,7 +10,8 @@ addPolypharmacyCount(
   indexDate = "cohort_start_date",
   window = c(0, 0),
   overlap = TRUE,
-  nameStyle = "polypharmacy_count",
+  categories = NULL,
+  nameStyle = "polypharmacy",
   name = tableName(x)
 )
 }
@@ -27,6 +28,11 @@ defines the index date.}
 \code{FALSE}, count drug eras that occur within the window without requiring them
 to overlap one another.}
 
+\item{categories}{A named list of numeric vectors, each containing the lower
+and upper bounds of a score interval. An additional column with the suffix
+\verb{_categories} is added. Intervals are
+evaluated in the order supplied, and missing scores are labelled \code{missing}.}
+
 \item{nameStyle}{A character string specifying the name of the new column.}
 
 \item{name}{A character string specifying the name of the output table. If
@@ -37,28 +43,8 @@ The table \code{x} with a new column containing the maximum number of
 simultaneous ingredients in the window of interest.
 }
 \description{
-Add the maximum number of ingredients to which an individual is simultaneously
-exposed within a specified window
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
 }
-\examples{
-\donttest{
-library(omock)
-library(duckdb)
-library(OmopIndices)
-library(dplyr)
-library(CohortConstructor)
-
-cdm <- mockCdmFromDataset(datasetName = "GiBleed", source = "duckdb")
-cdm$cohort <- conceptCohort(
-  cdm = cdm,
-  conceptSet = list(sinusitis = c(257012L, 4283893L, 4294548L, 40481087L)),
-  name = "cohort"
-)
-
-cdm$cohort |>
-  addPolypharmacyCount(window = c(-30, 0)) |>
-  select(subject_id, cohort_start_date, polypharmacy_count) |>
-  glimpse()
-}
-
+\details{
+The function was renamed to \code{addPolypharmacy()}
 }
